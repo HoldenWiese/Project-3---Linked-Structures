@@ -19,8 +19,14 @@ from slist import SList
 def main():
   test = SList()
   test.insert(1)  
-  
-  print(test.find(32))
+  test.insert(3)
+  test.insert(2)
+  test.insert(6)
+  test.insert(5)
+  test.insert(5)
+  test.insert(-1)
+
+  print(test)
   
 if __name__ == "__main__":
     main()
