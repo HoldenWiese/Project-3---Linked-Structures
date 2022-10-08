@@ -16,19 +16,7 @@ from slist import SList
 #   return True
 
 def main():
-  test = SList()
-  test.insert(1)  
-  test.insert(3)
-  test.insert(2)
-  test.insert(6)
-  test.insert(5)
-  test.insert(5)
-  test.insert(-1)
-  test.insert(-29)
-  test.insert(5)
 
-
-  print(test[2])
   
 if __name__ == "__main__":
     main()
