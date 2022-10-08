@@ -35,7 +35,7 @@ class SList:
         self._head = self._newN
         self._size = self._size + 1
       else:
-        while value > self._curr.value:
+        while value >= self._curr.value:
           self._prev = self._curr
           self._curr = self._next
           if self._next is not None:
@@ -74,35 +74,46 @@ class SList:
       if self._curr.value is value:
         self._head = self._next
         self._curr.next = None
-        return
+        self._size -= 1
+        return True
     while self._curr is not None:
       if self._curr.value is value:
         self._prev.next = self._curr.next
         self._curr.next = None
-        return
+        self._size -= 1
+        return True
       self._prev = self._curr  
       self._curr = self._next
       if self._next is not None:
         self._next = self._next.next
       if self._curr is None:
-        return
+        return False
 
   '''Remove all instances of value'''
 
   def remove_all(self, value):
-    pass
+    removed = True
+    while removed is True:
+      removed = self.remove(value)
 
   '''Convert the list to a string and return it'''
 
   def __str__(self):
-    len = range(self._size)
     output = '['
-    for i in len:
-      if self[i] is self._size - 1:
-        output += str(self[i]) + ']'
-      else:
-        output += str(self[i]) + ', '
-    return output
+    
+    if self._head is not None:
+      self._curr = self._head
+      self._next = self._curr.next
+    while self._curr is not None:
+      if self._next is None:
+        output += str(self._curr.value) + ']'
+        return output
+      output += str(self._curr.value) + ', '
+      self._curr = self._next
+      if self._next is not None:
+        self._next = self._next.next
+      if self._curr is None:
+        return output
   
   def __next__(self):
     if self._next is None:
@@ -137,5 +148,8 @@ class SList:
       if self._curr is None:
         break
 
+  def size(self):
+    return self._size
+
   def __len__(self):
-    pass
+    return self._size

@@ -1,4 +1,3 @@
-from print import *
 from slist import SList
 # from course import Course
 
@@ -25,9 +24,11 @@ def main():
   test.insert(5)
   test.insert(5)
   test.insert(-1)
+  test.insert(-29)
+  test.insert(5)
 
-  print(test)
 
+  print(test[2])
   
 if __name__ == "__main__":
     main()
