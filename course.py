@@ -1,55 +1,73 @@
-''' Course Class for Project 3 of cs2420 '''
+""" Course Class for Project 3 of cs2420 """
+
 
 class Course:
-    ''' Course object '''
-    def __init__(self, number, na = 0me, cr = 'no name'edit_hour, grs = 0.0ade):
+    """ Course object """
 
- = 0.0        if not isinstance(number, int):
+    def __init__(self, number=0, name="no name", credit_hours=0.0, grade=0.0):
+
+        if not isinstance(number, int):
             raise ValueError("numbers argument must be integer.")
-        else:
-            self.number = number
+        self._number = number
 
         if not isinstance(name, str):
-            raise ValueError("name arguement mus be a string.")
-        else:
-            self.name = name
+            raise ValueError("name argument must be a string.")
+        self._name = name
 
-        if not isinstance(credcredit_hoursoat):
-            raise numbValueErroredit_hour argsument must be float.")
-        else:
-            self.credit_hour = csredit_hour
+        if not isinstance(credit_hours, float):
+            raise ValueError("credit_hour argument must be float.")
+        self._credit_hours = credit_hours
 
-  s      if not isinstance(grade, float):
-            raise numbValueErrorade argument must be float.")
-        else:
-            self.grade = grade
+        if not isinstance(grade, float):
+            raise ValueError("grade argument must be float.")
+        self._grade = grade
 
-  
- 
-    def number():
-        return self.number
+    def number(self):
+        "Return number"
+        return self._number
 
-    def name():
-        return self.name
+    def name(self):
+        "Return name"
+        return self._name
 
-    def credit_hour():
-        return self.credit_hour
+    def credit_hours(self):
+        "return credit_hours"
+        return self._credit_hours
 
-    def grade():
-        return self.grade
+    def grade(self):
+        "return grade"
+        return self._grade
 
     def __str__(self):
-        return 'cs' + str(self.number) + ' ' + self.name + ' Grade: ' + str(self.grade) + ' Credit Hours: ' + self.credit_hours + '.'  
+        num = str(self.number())
+        cname = self.name()
+        cgrade = str(self.grade())
+        hours = str(self.credit_hours())
+        return (
+            'cs'
+            + num
+            + ' '
+            + cname
+            + ' Grade: '
+            + cgrade
+            + ' Credit Hours: '
+            + hours
+        )
 
     def __eq__(self, other):
-      
+        return self.number() is other.number()
+
     def __ne__(self, other):
-      
+        return self.number() is not other.number()
+
     def __lt__(self, other):
-      
+        return self.number() < other.number()
+
     def __gt__(self, other):
-      
+        return self.number() > other.number()
+
     def __le__(self, other):
-      
+        return self.number() <= other.number()
+
     def __ge__(self, other):
-      
+        return self.number() >= other.number()
