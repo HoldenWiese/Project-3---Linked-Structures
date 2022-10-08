@@ -36,3 +36,17 @@
       # self._newN.next = self._curr
       # self._prev.next = self._newN
       # self._size = self._size + 1
+
+  def assignIndex(self):
+    i = 0
+    if self._head is not None:
+      self._curr = self._head
+      self._next = self._curr.next
+    while self._curr is not None:
+      self._curr.index = i
+      i += 1
+      self._curr = self._next
+      if self._next is not None:
+        self._next = self._next.next
+      if self._curr is None:
+        break
