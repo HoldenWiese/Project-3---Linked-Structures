@@ -4,22 +4,22 @@
 class Course:
     """ Course object """
 
-    def __init__(self, number=0, name="no name", credit_hours=0.0, grade=0.0):
+    def __init__(self, number=0, name="", credit_hours=0.0, grade=0.0):
 
-        if not isinstance(number, int):
-            raise ValueError("numbers argument must be integer.")
+        if not isinstance(number, int) or number < 0:
+            raise ValueError("number argument must be a positive integer.")
         self._number = number
 
         if not isinstance(name, str):
             raise ValueError("name argument must be a string.")
         self._name = name
 
-        if not isinstance(credit_hours, float):
-            raise ValueError("credit_hour argument must be float.")
+        if not isinstance(credit_hours, float) or credit_hours < 0.0:
+            raise ValueError("credit_hour argument must be float and must be positive.")
         self._credit_hours = credit_hours
 
-        if not isinstance(grade, float):
-            raise ValueError("grade argument must be float.")
+        if not isinstance(grade, float) or grade < 0.0:
+            raise ValueError("grade argument must be float and must be positive.")
         self._grade = grade
 
     def number(self):
@@ -42,7 +42,7 @@ class Course:
         num = str(self.number())
         cname = self.name()
         cgrade = str(self.grade())
-        hours = str(self.credit_hours())
+        hours = str(self.credit_hr())
         return (
             'cs'
             + num
@@ -55,10 +55,10 @@ class Course:
         )
 
     def __eq__(self, other):
-        return self.number() is other.number()
+        return self.number() == other
 
     def __ne__(self, other):
-        return self.number() is not other.number()
+        return self.number() != other.number()
 
     def __lt__(self, other):
         return self.number() < other.number()

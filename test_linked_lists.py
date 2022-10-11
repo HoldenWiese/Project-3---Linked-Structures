@@ -66,6 +66,8 @@ def test_remove():
         cl.insert(Course(number, "test", 1.0, 2.0))
 
     course = cl.find(courseNumbers[0])
+    print(courseNumbers[0])
+    print(course)
     assert course.number() == courseNumbers[0]
     course = cl.find(courseNumbers[10])
     assert course.number() == courseNumbers[10]
@@ -83,9 +85,12 @@ def test_remove_all():
     cl.insert(Course(1000))
     for _ in range(20):
         cl.insert(Course(1200))
+    print(cl)
     cl.insert(Course(1800))
     assert len(cl) == 22
     cl.remove_all(1200)
+    print(len(cl))
+    print(cl.size())
     assert len(cl) == 2
 
 

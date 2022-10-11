@@ -63,8 +63,8 @@ class SList:
         else:
             self._curr = self._head
             while self._curr is not None:
-                if self._curr.value is value:
-                    return value
+                if self._curr.value == value:
+                    return self._curr.value
                 else:
                     self._curr = self._curr.next
                     if self._next is not None:
@@ -82,7 +82,7 @@ class SList:
                 self._size -= 1
                 return True
         while self._curr is not None:
-            if self._curr.value is value:
+            if self._curr.value == value:
                 self._prev.next = self._curr.next
                 self._curr.next = None
                 self._size -= 1
