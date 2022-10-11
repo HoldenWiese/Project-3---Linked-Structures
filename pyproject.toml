@@ -10,6 +10,12 @@ numpy = "^1.22.2"
 replit = "^3.2.4"
 Flask = "^2.2.0"
 urllib3 = "^1.26.12"
+pylint = "^2.15.4"
+pylint-utils = "^0.5.0"
+pylint-args = "^0.0.5"
+pylint-print = "^1.0.0"
+pylint-t2 = "^0.0.1"
+pylint-pytest = "^1.1.2"
 
 [tool.poetry.dev-dependencies]
 debugpy = "^1.6.2"

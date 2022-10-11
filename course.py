@@ -30,7 +30,7 @@ class Course:
         "Return name"
         return self._name
 
-    def credit_hours(self):
+    def credit_hr(self):
         "return credit_hours"
         return self._credit_hours
 

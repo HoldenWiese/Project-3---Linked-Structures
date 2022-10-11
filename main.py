@@ -16,7 +16,7 @@ def is_sorted(lyst):
   return True
 
 def main():
-    test1 = Course('1400', 'OOP', 3.0, 3.6)
+    test1 = Course(1400, 'OOP', 3.0, 3.6)
     test2 = Course(1410, 'DS', 4.0, 3.9)
     print(test1)
     print(test2)
@@ -26,6 +26,21 @@ def main():
     print(test1 > test2)
     print(test1 <= test2)
     print(test1 >= test2)
+
+    test3 = SList()
+    test3.insert(1)
+    test3.insert(5)
+    test3.insert(3)
+    test3.insert(-1)
+    test3.insert(3)
+    test3.insert(5)
+
+    print(test3)
+    test3.remove_all(3)
+    print(test3)
+    test3.remove(5)
+    print(test3)
+    print(test3.find(1))
   
 if __name__ == "__main__":
     main()
