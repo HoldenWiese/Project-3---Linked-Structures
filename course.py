@@ -58,16 +58,16 @@ class Course:
         return self.number() == other
 
     def __ne__(self, other):
-        return self.number() != other.number()
+        return self.number() != other
 
     def __lt__(self, other):
-        return self.number() < other.number()
+        return self.number() < other
 
     def __gt__(self, other):
-        return self.number() > other.number()
+        return self.number() > other
 
     def __le__(self, other):
-        return self.number() <= other.number()
+        return self.number() <= other
 
     def __ge__(self, other):
-        return self.number() >= other.number()
+        return self.number() >= other
